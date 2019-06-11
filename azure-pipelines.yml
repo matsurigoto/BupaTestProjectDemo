@@ -12,6 +12,17 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
+  inputs:
+    command: restore
+    projects: BupaTestPOC.sln
+    noCache: true
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build & Publish'
+  inputs:
+    command: publish
+    projects: BupaTestPOC.sln
+    arguments: -c release -o $(Build.ArtifactStagingDirectory)/publish
+
