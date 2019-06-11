@@ -27,12 +27,15 @@ steps:
     noCache: true
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet build & Publish'
+  displayName: Build
   inputs:
-    command: publish
-    arguments: -c release -o $(Build.ArtifactStagingDirectory)/publish
+    command: build
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)' 
 
-- task: VSTest@2
+- task: DotNetCoreCLI@2
+  displayName: Test
   inputs:
-    testSelector: 'testRun'
-    searchFolder: '$(System.DefaultWorkingDirectory)'
+    command: test
+    projects: '**/*Test.csproj'
+    arguments: '--configuration $(buildConfiguration)'
