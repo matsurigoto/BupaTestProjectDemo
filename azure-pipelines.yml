@@ -30,6 +30,7 @@ steps:
   displayName: 'dotnet build & Publish'
   inputs:
     command: publish
+    projects: '**/*.csproj'
     arguments: -c release -o $(Build.ArtifactStagingDirectory)/publish
 
 - task: VSTest@2
