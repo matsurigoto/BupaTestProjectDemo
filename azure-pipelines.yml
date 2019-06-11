@@ -14,6 +14,14 @@ variables:
 
 steps:
 
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET Core sdk'
+  inputs:
+    packageType: sdk
+    version: 3.X
+    installationPath: $(Agent.ToolsDirectory)/dotne
+
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore'
   inputs:
