@@ -12,6 +12,8 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
+steps:
+
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore'
   inputs:
@@ -25,4 +27,3 @@ variables:
     command: publish
     projects: BupaTestPOC.sln
     arguments: -c release -o $(Build.ArtifactStagingDirectory)/publish
-
