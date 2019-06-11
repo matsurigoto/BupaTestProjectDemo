@@ -27,3 +27,8 @@ steps:
     command: publish
     projects: BupaTestPOC.sln
     arguments: -c release -o $(Build.ArtifactStagingDirectory)/publish
+
+- task: VSTest@2
+  inputs:
+    testSelector: 'testRun'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
