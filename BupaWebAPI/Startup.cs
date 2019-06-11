@@ -27,14 +27,10 @@ namespace BupaWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            //services.AddTransient<IMemberApiClient, MemberApiClient>();
             services.AddHttpClient<IMemberApiClient,MemberApiClient>(c =>
             {
                 c.BaseAddress = new Uri("https://pfeapim.azure-api.net/");
-                //c.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
-                //c.DefaultRequestHeaders.Add("User-Agent", "HttpClientFactory-Sample");
             });
-            //services.AddSingleton<MemberApiClient>();  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

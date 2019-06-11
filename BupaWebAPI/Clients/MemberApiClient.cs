@@ -13,7 +13,6 @@ namespace BupaWebAPI.Clients
 
     public class MemberApiClient : IMemberApiClient
     {
-        //protected readonly IHttpClientFactory _clientFactory;
         protected readonly HttpClient _httpClient;
 
         public MemberApiClient(HttpClient client)

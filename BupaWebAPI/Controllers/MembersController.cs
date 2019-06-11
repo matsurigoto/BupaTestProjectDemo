@@ -19,7 +19,6 @@ namespace BupaWebAPI.Controllers
             _membetApiClient = memberApiClient;
         }
 
-        // POST api/members
         [HttpPost]
         public async Task<CreateMemberResponse> CreateMember([FromBody]CreateMemberRequest request)
         {
