@@ -17,7 +17,7 @@ steps:
 - task: DotNetCoreInstaller@0
   displayName: 'Use .NET Core sdk 3.0.100-perview5-011568'
   inputs:
-    version: 3.0.100-preview5-011568
+    version: 2.x
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore'
