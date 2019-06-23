@@ -37,6 +37,7 @@
   <ItemGroup>
     <SpecFlowFeatureFiles Update="Scenarios\MemberServices.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MemberServices.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
   </ItemGroup>
 
